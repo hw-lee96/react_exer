@@ -1,5 +1,18 @@
 import React, { Component } from 'react';
 
+/* 
+    react에서 DOM에 직접적인 접근이 필요한 경우는 다음과 같은 경우가 있다.
+        1. 특정 DOM의 크기를 가져와야 할 때
+        2. 특정 DOM에서 스크롤 위치를 가져오거나 설정을 해야할 때
+        3. input/textarea 등에 포커스를 해야 할 때
+        4. 외부 라이브러리 (플레이어, 차트, 캐로절 등)을 사용할 때
+    
+    이러한 경우 document.getELelemet~~ 와 같은 실제 DOM의 요소를 가져오면 안되며,
+    ref를 사용해야 한다. 사용 방법은 아래와 같다.
+
+    <div ref={ref => {this.mydiv = ref} }></div>
+*/
+
 class App extends Component {
     state = {
         hello: 'Hello React App!',
